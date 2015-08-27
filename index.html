@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" id = "menu-toggle">Table of Contents</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="MP_MODSPACK.rar">Download</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a data-scroll href="#Introduction">
+                        INTRODUCTION
+                    </a>
+                </li>
+                <li>
+                    <a data-scroll href="#Philosophy">PHILOSOPHY</a>
+                </li>
+                <li>
+                    <a data-scroll href="#Lorem">LOREM</a>
+                </li>
+                <li>
+                    <a data-scroll href="#Ipsum">IPSUM</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 id = "Introduction">Introduction</h1>
+                        <p>Flak's Pack is a collection of mods, modmods, and alterations for Sid Meier's Civilization 5 Multiplayer. The game technically doesn't support multiplayer modding. However, using an interesting hack where the game can be tricked into thinking mods are DLC. Unfortunatley, the process of choosing mods, building the pack, and checking for compatibility is a lengthy one. This is the modpack I built for me and my friends. The pack includes a complete overhaul of Religion, Social Policies, Unique Components, and  game balance much much more.</p>
+                        <h1 id="Philosophy">Philosophy</h1>
+                        <p>I envisoned this modpack as a sort of expansion. Adding in lots of QoL changes as well as major balance updates. Unmodded Civilization 5 is a well fun game to play with friends, but from a game design perspective fairly broken.</p>
+                        <p>It includes many illusions of choice. The best example is The Social Policy system. If one didn't go tradion-liberty-ideology, one became irrelevant within just a few turns. The tech tree only contained choice for the first age. Afterwards, if one didn't beeline for science buildings, one lost.  Overall science was just too strong to allow any real choice in the game.
+                        </p>
+                        <p>Although science was too strong, science victories almost never happened. New techs came so fast towards the end game, that a high tech player spamming military would win long before a high tech player could ship off to Alpha Centauri.</p>
+                        <p>The AI was absoluteley terrible, Most civilization weren't much better than a generic civilization. Some tile-improvments were far weaker than others. Some civs didn't even have a unique ability that did anything, coastal cities suffered lategame due to a lack of useable tiles. Great Merchant and great merchant points had to be avoided. There weren't very many buildings in the game</p>
+                        <h1 id = "Lorem">Introduction</h1>
+                        <p>Flak's Pack is a collection of mods, modmods, and alterations for Sid Meier's Civilization 5 Multiplayer. The game technically doesn't support multiplayer modding. However, using an interesting hack where the game can be tricked into thinking mods are DLC. Unfortunatley, the process of choosing mods, building the pack, and checking for compatibility is a lengthy one. This is the modpack I built for me and my friends. The pack includes a complete overhaul of Religion, Social Policies, Unique Components, and  game balance much much more.</p>
+                        <h1 id = "Ipsum">Introduction</h1>
+                        <p>Flak's Pack is a collection of mods, modmods, and alterations for Sid Meier's Civilization 5 Multiplayer. The game technically doesn't support multiplayer modding. However, using an interesting hack where the game can be tricked into thinking mods are DLC. Unfortunatley, the process of choosing mods, building the pack, and checking for compatibility is a lengthy one. This is the modpack I built for me and my friends. The pack includes a complete overhaul of Religion, Social Policies, Unique Components, and  game balance much much more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    smoothScroll.init({
+      speed: 1000,
+      easing: 'easeInOutCubic',
+      updateURL:true,
+      offset: 100,
+      callback: function (){
+      }
+    });
+     var topRange      = 200,  // measure from the top of the viewport to X pixels down
+     edgeMargin    = 20,   // margin above the top or margin from the end of the page
+     animationTime = 1200, // time in milliseconds
+     contentTop = [];
+
+$(document).ready(function(){
+ // Stop animated scroll if the user does something
+$('html,body').bind('scroll mousedown DOMMouseScroll mousewheel keyup', function(e){
+  if ( e.which > 0 || e.type == 'mousedown' || e.type == 'mousewheel' ){
+    $('html,body').stop();
+  }
+})
+
+ // Set up content an array of locations
+$('.sidebar-nav').find('a').each(function(){
+  contentTop.push( $( $(this).attr('href') ).offset().top );
+})
+
+ // Animate menu scroll to content
+/*$('.sidebar-nav').find('a').click(function(){
+  var sel = this,
+  newTop = Math.min( contentTop[ $('.sidebar-nav a').index( $(this) ) ], $(document).height() - $(window).height() ); // get content top or top position if at the document bottom
+  $('html,body').stop().animate({ 'scrollTop' : newTop }, animationTime, function(){
+    window.location.hash = $(sel).attr('href');
+  });
+  return false;
+})*/
+
+ // adjust side menu
+$(window).scroll(function(){
+  var winTop = $(window).scrollTop(),
+  bodyHt = $(document).height(),
+  vpHt = $(window).height() + edgeMargin;  // viewport height + margin
+  $.each( contentTop, function(i,loc){
+    if ( ( loc > winTop - edgeMargin && ( loc < winTop + topRange || ( winTop + vpHt ) >= bodyHt ) ) ){
+      $('.sidebar-nav li').removeClass('sidebar-brand').eq(i).addClass('sidebar-brand');
+    }
+  })
+})
+
+});
+    </script>
+
+</body>
+
+</html>
