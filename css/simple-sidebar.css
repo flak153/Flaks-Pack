@@ -8,15 +8,6 @@
 body {
   padding-top: 50px;
 }
-h1{
-    font-size:70px;
-    text-indent: 100px;
-}
-p{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .main {
   padding: 200px;
 }
@@ -83,8 +74,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47a7c7dc', e
     width: 100%;
     position: absolute;
     padding: 0px;
+}
+.actualPageContent{
     font-size: 27px;
+}
 
+}
+.actualPageContent h1{
+    font-size:70px;
+    text-align:center;
+}
+#page-content-wrapper p{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -146,6 +148,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47a7c7dc', e
     background: none;
 }
 
+.jumbo{
+    background-image:url("../images/background.jpg");
+    background-size:cover;
+    height:500px;
+}
+
 @media(min-width:900px) {
     #wrapper.toggled {
         padding-left: 250px;
@@ -167,10 +175,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47a7c7dc', e
         position: relative;
     }
 
-    #page-content-wrapper {
+    .actualPageContent {
         position: relative;
         margin-right: 0;
-        padding-left: 400px;
-        padding-right:400px;
+        padding-left: 300px;
+        padding-right:300px;
     }
+    .jumbo{
+    height:905px;
+    overflow:hidden;
+    }
+}
+.img-responsive{
+    padding-left:0px;
+    padding-right:0px;
 }
