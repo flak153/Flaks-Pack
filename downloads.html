@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/download.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" id = "menu-toggle">Table of Contents</a>
+          <a class="navbar-brand" href="index.html" id = "logo">Flak's Pack</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="downloads.html">Download</a></li>
+            <li><a href="#">Devlog</a></li>
+            <li><a href="#">Patch Notes</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Known Bugs</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a data-scroll href="#Introduction">
+                        INTRODUCTION
+                    </a>
+                </li>
+                <li>
+                    <a data-scroll href="#Philosophy">PHILOSOPHY</a>
+                </li>
+                <li>
+                    <a data-scroll href="#Lorem">LOREM</a>
+                </li>
+                <li>
+                    <a data-scroll href="#Ipsum">IPSUM</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="text-center">
+                  <p><a class="btn btn-primary btn-lg" href="modpacks/MP_MODSPACK.rar" role="button" id="download-btn">Download</a></p> 
+                </div>
+                <div class="actualPageContent">
+                  <div class="row">
+                      <div class="col-lg-6 foo">
+                        <h1 id = "Windows">Windows</h1>
+                        <ol>
+	                        <li><p>Extract the modpack from the download</p></li>
+                        	<li><p>Copy paste the modpack folder into Steam\SteamApps\common\Sid Meier's Civilization V\assets\DLC.</p></li>
+                        </ol>
+                       </div>
+                       <div class="col-lg-6 foo">
+                        <h1 id = "Mac">Mac</h1>
+                        <ol>
+                        	<li><p>Extract the modpack from the download</p></li>
+							<li><p>Navigate to Macintosh HD/Users/{Username}/Libraries/Application Support/Steam/SteamApps/common/Sid Meier's Civilization V</p></li>
+							<li><p>Right_click -> Civlization V -> Show Package Contents</p></li>
+							<li><p>Place Modpack folder in Contents/Home/Assets/DLC</p></li>
+						</ol>
+						</div>
+                          
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+	    $("#menu-toggle").click(function(e) {
+	        e.preventDefault();
+	        $("#wrapper").toggleClass("toggled");
+	    });
+	    smoothScroll.init({
+	      speed: 1000,
+	      easing: 'easeInOutCubic',
+	      updateURL:true,
+	      offset: 100,
+	      callback: function (){
+	      }
+	    });
+	    var topRange      = 200,  // measure from the top of the viewport to X pixels down
+	    edgeMargin    = 20,   // margin above the top or margin from the end of the page
+	    animationTime = 1200, // time in milliseconds
+	    contentTop = [];
+
+		$(document).ready(function(){
+		 // Stop animated scroll if the user does something
+		$('html,body').bind('scroll mousedown DOMMouseScroll mousewheel keyup', function(e){
+		  if ( e.which > 0 || e.type == 'mousedown' || e.type == 'mousewheel' ){
+		    $('html,body').stop();
+		  }
+		})
+
+		 // Set up content an array of locations
+		$('.sidebar-nav').find('a').each(function(){
+		  contentTop.push( $( $(this).attr('href') ).offset().top );
+		})
+
+ // Animate menu scroll to content
+/*$('.sidebar-nav').find('a').click(function(){
+  var sel = this,
+  newTop = Math.min( contentTop[ $('.sidebar-nav a').index( $(this) ) ], $(document).height() - $(window).height() ); // get content top or top position if at the document bottom
+  $('html,body').stop().animate({ 'scrollTop' : newTop }, animationTime, function(){
+    window.location.hash = $(sel).attr('href');
+  });
+  return false;
+})*/
+
+ // adjust side menu
+		$(window).scroll(function(){
+		  var winTop = $(window).scrollTop(),
+		  bodyHt = $(document).height(),
+		  vpHt = $(window).height() + edgeMargin;  // viewport height + margin
+		  $.each( contentTop, function(i,loc){
+		    if ( ( loc > winTop - edgeMargin && ( loc < winTop + topRange || ( winTop + vpHt ) >= bodyHt ) ) ){
+		      $('.sidebar-nav li').removeClass('sidebar-brand').eq(i).addClass('sidebar-brand');
+		    }
+		  })
+		})
+
+		});
+    </script>
+
+</body>
+
+</html>

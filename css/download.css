@@ -1,0 +1,15 @@
+
+#download-btn {
+    font-size:150px;
+    line-height: 2;
+    border-radius:100px;
+    background-color: #1e1c25;
+}
+#download-btn:hover {
+    
+}
+
+.actualPageContent{
+        padding-left:0px;
+        padding-right:0px;
+    }
