@@ -1,15 +1,18 @@
 
 #download-btn {
+    margin-top: 50px;
     font-size:150px;
     line-height: 2;
     border-radius:100px;
     background-color: #1e1c25;
+    transition: background-color .5s ease-out;
 }
+
 #download-btn:hover {
-    
+    background-color:#333333;
 }
 
 .actualPageContent{
-        padding-left:0px;
-        padding-right:0px;
+        padding-left:20%;
+        padding-right:20%;
     }
